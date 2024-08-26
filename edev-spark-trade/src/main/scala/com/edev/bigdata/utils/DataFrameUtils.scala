@@ -13,7 +13,7 @@ object DataFrameUtils {
    * @param database the hive database which need save to
    * @param table the hive table which need save to
    */
-  def saveAppend(data: Dataset[Row], database: String, table: String) = {
+  def saveAppend(data: Dataset[Row], database: String, table: String): Unit = {
     data.write.mode(SaveMode.Append).saveAsTable(database+"."+table)
   }
   /**
@@ -22,7 +22,7 @@ object DataFrameUtils {
    * @param database the hive database which need save to
    * @param table the hive table which need save to
    */
-  def saveOverwrite(data: Dataset[Row], database: String, table: String) = {
+  def saveOverwrite(data: Dataset[Row], database: String, table: String): Unit = {
     data.write.mode(SaveMode.Overwrite).saveAsTable(database+"."+table)
   }
 }

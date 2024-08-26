@@ -13,7 +13,7 @@ public class PropertyFile {
     private static Properties properties = null;
 
     /**
-     *
+     * read the property file
      */
     public void readPropertyFile(){
         try {
@@ -28,7 +28,7 @@ public class PropertyFile {
     }
 
     /**
-     * @param key
+     * @param key the key
      * @return the value of the key in the property file.
      */
     public static String getProperty(String key) {
@@ -39,7 +39,7 @@ public class PropertyFile {
     }
 
     /**
-     * @param key
+     * @param key the key
      * @return the value of the key in the property file.
      */
     public static String getProperty(String key,String defaultValue) {
