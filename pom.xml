@@ -9,6 +9,7 @@
     <modules>
         <module>edev-spark-trade</module>
         <module>edev-flink-trade</module>
+        <module>edev-hudi-spark</module>
     </modules>
     <packaging>pom</packaging>
 </project>
