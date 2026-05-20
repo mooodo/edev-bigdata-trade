@@ -11,7 +11,7 @@ object Product {
   def main(args: Array[String]): Unit = {
     val num = PropertyFile.getProperty("numPartitions").toInt
     val spark = SparkUtils.init("etl_product")
-    spark.udf.register("nvl", (value:Int) => if(value!=null) value else 0)
+    spark.udf.register("nvl", (value:Integer) => if(value!=null) value else 0)
     val data = spark.sql("select id product_key, name, price, unit, nvl(supplier_id) supplier_key, "+
         "nvl(classify_id) classify_key, image, original_price, tip from edev_product.t_product").repartition(num)
     DataFrameUtils.saveOverwrite(data, "etl", "etl_product")
