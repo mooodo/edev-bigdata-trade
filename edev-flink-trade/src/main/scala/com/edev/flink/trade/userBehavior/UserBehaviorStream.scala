@@ -10,7 +10,7 @@ object UserBehaviorStream {
     val settings = EnvironmentSettings.newInstance().inStreamingMode().build()
     val tEnv = StreamTableEnvironment.create(env, settings)
 
-    LoggingDataTable.createTable(tEnv)
+    LoggingDataTable.createLoggingDataTable(tEnv)
     UserBehaviorTable.createTable(tEnv)
     UserBehaviorTable.saveUserBehavior(tEnv)
   }
